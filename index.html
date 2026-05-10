@@ -1,63 +1,120 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vijzzz AI</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijay AI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="bg-glow"></div>
+
+<div class="bg1"></div>
+<div class="bg2"></div>
+
+<div class="app">
 
   <aside class="sidebar">
-    <div class="logo">⚡ Vijzzz AI</div>
-    <button class="new-chat">+ New Chat</button>
+
+    <div class="logo">
+      ⚡ Vijay AI
+    </div>
+
+    <button class="new-chat">
+      + New Chat
+    </button>
 
     <div class="menu">
-      <div class="menu-item active">💬 AI Chat</div>
-      <div class="menu-item">🖼 Image Support</div>
-      <div class="menu-item">🎤 Voice Mode</div>
-      <div class="menu-item">📂 File Upload</div>
+
+      <div class="menu-item active">
+        💬 AI Chat
+      </div>
+
+      <div class="menu-item">
+        🎤 Voice Assistant
+      </div>
+
+      <div class="menu-item">
+        🖼 AI Images
+      </div>
+
+      <div class="menu-item">
+        📂 File Reader
+      </div>
+
     </div>
 
-    <div class="bottom">
-      <div class="premium">Premium UI</div>
-    </div>
   </aside>
 
-  <main class="chat-area">
-    <header>
-      <h1>Vijzzz AI</h1>
-      <p>Smart AI Assistant with Voice + Files + Images</p>
-    </header>
+  <main class="chat-container">
+
+    <div class="topbar">
+
+      <div>
+        <h1>Vijay AI</h1>
+        <p>Advanced Premium AI Assistant</p>
+      </div>
+
+      <div class="status">
+        ● Online
+      </div>
+
+    </div>
 
     <div class="chat-box" id="chatBox">
+
       <div class="message ai">
-        <span>Hello 👋 I'm <b>Vijzzz AI</b>. Ask anything!</span>
+        <div class="bubble">
+          Hello 👋 I am <b>Vijay AI</b>.<br>
+          Ask me anything.
+        </div>
       </div>
+
     </div>
 
-    <div class="upload-row">
-      <label class="upload-btn">
-        📎 File
-        <input type="file" hidden />
-      </label>
+    <div class="bottom-area">
 
-      <label class="upload-btn">
-        🖼 Image
-        <input type="file" accept="image/*" hidden />
-      </label>
+      <div class="tools">
 
-      <button class="voice-btn" id="voiceBtn">🎤 Voice</button>
+        <label class="tool-btn">
+          📎
+          <input type="file" hidden>
+        </label>
+
+        <label class="tool-btn">
+          🖼
+          <input type="file" accept="image/*" hidden>
+        </label>
+
+        <button class="tool-btn" id="voiceBtn">
+          🎤
+        </button>
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Message Vijay AI..."
+        >
+
+        <button onclick="sendMessage()">
+          ➤
+        </button>
+
+      </div>
+
     </div>
 
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Ask Vijzzz AI anything..." />
-      <button onclick="sendMessage()">➤</button>
-    </div>
   </main>
 
+</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
