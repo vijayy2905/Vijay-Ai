@@ -1,13 +1,23 @@
 
 const input = document.getElementById("userInput");
+
 const chatBox = document.getElementById("chatBox");
-const API_KEY = "AIzaSyDoONDq0717FuigN7g8wFQqlvQOUwzNPjA";
-async function sendMessage() {
+
+const API_KEY = "AIzaSyCouB5p2GKeY92XU_TrQH8vG4Di7EJU7V4";
+
+async function sendMessage(){
+
   const text = input.value.trim();
-  if (!text) return;
+
+  if(!text) return;
+
   const userMsg = document.createElement("div");
+
   userMsg.className = "message user";
-  userMsg.innerHTML = `<span>${text}</span>`;
+
+  userMsg.innerHTML =
+  `<div class="bubble">${text}</div>`;
+
   chatBox.appendChild(userMsg);
 
   input.value = "";
@@ -16,29 +26,30 @@ async function sendMessage() {
 
   aiMsg.className = "message ai";
 
-  aiMsg.innerHTML = `<span>⚡ Vijay AI typing...</span>`;
+  aiMsg.innerHTML =
+  `<div class="bubble">⚡ Vijay AI typing...</div>`;
 
   chatBox.appendChild(aiMsg);
 
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  try {
+  try{
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
       {
-        method: "POST",
+        method:"POST",
 
-        headers: {
-          "Content-Type": "application/json"
+        headers:{
+          "Content-Type":"application/json"
         },
 
-        body: JSON.stringify({
-          contents: [
+        body:JSON.stringify({
+          contents:[
             {
-              parts: [
+              parts:[
                 {
-                  text: text
+                  text:text
                 }
               ]
             }
@@ -46,26 +57,32 @@ async function sendMessage() {
         })
       }
     );
+
     const data = await response.json();
+
     const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No response";
-    aiMsg.innerHTML = `<span>${reply}</span>`;
+    data.candidates?.[0]?.content?.parts?.[0]?.text
+    || "No response";
+
+    aiMsg.innerHTML =
+    `<div class="bubble">${reply}</div>`;
+
     chatBox.scrollTop = chatBox.scrollHeight;
 
   }
 
-  catch (error) {
+  catch(error){
 
-    aiMsg.innerHTML = `<span>⚠️ Error connecting AI</span>`;
+    aiMsg.innerHTML =
+    `<div class="bubble">⚠️ AI connection error</div>`;
 
   }
 
 }
 
-input.addEventListener("keypress", function(e){
+input.addEventListener("keypress",function(e){
 
-  if(e.key === "Enter"){
+  if(e.key==="Enter"){
 
     sendMessage();
 
@@ -75,33 +92,23 @@ input.addEventListener("keypress", function(e){
 
 const voiceBtn = document.getElementById("voiceBtn");
 
-if ('webkitSpeechRecognition' in window) {
+if('webkitSpeechRecognition' in window){
 
-  const recognition = new webkitSpeechRecognition();
+  const recognition =
+  new webkitSpeechRecognition();
 
-  recognition.continuous = false;
+  recognition.lang = "en-US";
 
-  recognition.lang = 'en-US';
-
-  voiceBtn.onclick = () => {
+  voiceBtn.onclick = ()=>{
 
     recognition.start();
 
-    voiceBtn.innerText = "🎙 Listening...";
-
   };
 
-  recognition.onresult = (event) => {
+  recognition.onresult = (event)=>{
 
-    input.value = event.results[0][0].transcript;
-
-    voiceBtn.innerText = "🎤 Voice";
-
-  };
-
-  recognition.onerror = () => {
-
-    voiceBtn.innerText = "🎤 Voice";
+    input.value =
+    event.results[0][0].transcript;
 
   };
 
