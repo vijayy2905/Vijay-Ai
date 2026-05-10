@@ -7,165 +7,195 @@
 }
 
 body{
-  background:#060816;
+  background:#050816;
   color:white;
-  display:flex;
-  min-height:100vh;
   overflow:hidden;
 }
 
-.bg-glow{
+.bg1{
   position:fixed;
   width:500px;
   height:500px;
-  background:radial-gradient(circle,#9b4dff55,transparent);
-  top:-100px;
+  background:#7c3aed55;
+  filter:blur(140px);
+  top:-150px;
+  left:-100px;
+}
+
+.bg2{
+  position:fixed;
+  width:400px;
+  height:400px;
+  background:#d946ef44;
+  filter:blur(140px);
+  bottom:-120px;
   right:-100px;
-  z-index:0;
+}
+
+.app{
+  display:flex;
+  height:100vh;
 }
 
 .sidebar{
   width:260px;
-  background:rgba(20,20,35,0.9);
+  background:rgba(15,15,25,0.85);
   backdrop-filter:blur(20px);
   border-right:1px solid rgba(255,255,255,0.08);
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  padding:24px;
 }
 
 .logo{
-  font-size:28px;
+  font-size:30px;
   font-weight:bold;
-  color:#b57cff;
-  margin-bottom:25px;
+  margin-bottom:30px;
+  color:#d8b4fe;
 }
 
 .new-chat{
-  background:linear-gradient(90deg,#8a2be2,#c84dff);
+  width:100%;
+  padding:14px;
   border:none;
+  border-radius:16px;
+  background:linear-gradient(90deg,#7c3aed,#d946ef);
   color:white;
-  padding:12px;
-  border-radius:14px;
+  font-size:15px;
   cursor:pointer;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
 .menu-item{
-  padding:14px;
-  margin-bottom:10px;
-  border-radius:12px;
+  padding:15px;
+  border-radius:14px;
+  margin-bottom:12px;
   background:rgba(255,255,255,0.04);
   cursor:pointer;
-  transition:0.3s;
 }
 
-.menu-item:hover,.active{
-  background:#a855f7;
+.active{
+  background:#9333ea;
 }
 
-.bottom{
-  margin-top:20px;
-}
-
-.premium{
-  background:linear-gradient(90deg,#7b2ff7,#d946ef);
-  padding:12px;
-  border-radius:12px;
-  text-align:center;
-}
-
-.chat-area{
+.chat-container{
   flex:1;
   display:flex;
   flex-direction:column;
-  padding:30px;
-  position:relative;
-  z-index:1;
+  padding:25px;
 }
 
-header h1{
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.topbar h1{
   font-size:42px;
-  background:linear-gradient(90deg,#ffffff,#c084fc);
+  background:linear-gradient(90deg,#fff,#d8b4fe);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-header p{
-  margin-top:8px;
-  color:#bbb;
+.topbar p{
+  color:#aaa;
+  margin-top:5px;
+}
+
+.status{
+  background:#1f2937;
+  padding:10px 18px;
+  border-radius:30px;
+  color:#86efac;
 }
 
 .chat-box{
   flex:1;
-  margin-top:25px;
   overflow-y:auto;
-  padding-right:10px;
+  padding-right:8px;
 }
 
 .message{
-  padding:14px 18px;
-  border-radius:16px;
-  margin-bottom:15px;
-  max-width:75%;
-}
-
-.ai{
-  background:#1d1733;
-  border:1px solid #7b2ff7;
+  display:flex;
+  margin-bottom:20px;
 }
 
 .user{
-  background:#8a2be2;
-  margin-left:auto;
+  justify-content:flex-end;
 }
 
-.upload-row{
+.bubble{
+  max-width:75%;
+  padding:18px;
+  border-radius:20px;
+  line-height:1.6;
+}
+
+.ai .bubble{
+  background:#141426;
+  border:1px solid #9333ea;
+}
+
+.user .bubble{
+  background:linear-gradient(90deg,#7c3aed,#d946ef);
+}
+
+.bottom-area{
+  margin-top:20px;
+}
+
+.tools{
   display:flex;
   gap:12px;
   margin-bottom:15px;
 }
 
-.upload-btn,.voice-btn{
-  background:#171727;
-  border:1px solid #5b21b6;
+.tool-btn{
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:16px;
+  background:#141426;
   color:white;
-  padding:10px 14px;
-  border-radius:12px;
+  font-size:18px;
+  border:1px solid #7e22ce;
   cursor:pointer;
-}
-
-.input-area{
   display:flex;
-  gap:12px;
+  justify-content:center;
+  align-items:center;
 }
 
-.input-area input{
+.input-box{
+  display:flex;
+  gap:14px;
+}
+
+.input-box input{
   flex:1;
-  padding:16px;
+  background:#111827;
   border:none;
-  border-radius:16px;
-  background:#121222;
-  color:white;
   outline:none;
+  color:white;
+  padding:18px;
+  border-radius:18px;
+  font-size:15px;
 }
 
-.input-area button{
-  width:60px;
+.input-box button{
+  width:65px;
   border:none;
-  border-radius:16px;
-  background:linear-gradient(90deg,#8a2be2,#d946ef);
+  border-radius:18px;
+  background:linear-gradient(90deg,#7c3aed,#d946ef);
   color:white;
-  font-size:22px;
+  font-size:20px;
   cursor:pointer;
 }
 
 ::-webkit-scrollbar{
-  width:6px;
+  width:5px;
 }
 
 ::-webkit-scrollbar-thumb{
-  background:#7b2ff7;
-  border-radius:10px;
+  background:#9333ea;
+  border-radius:20px;
 }
