@@ -11,106 +11,74 @@
 
 <body>
 
-<div class="bg1"></div>
-<div class="bg2"></div>
-
 <div class="app">
 
-  <aside class="sidebar">
+  <div class="top-icons">
+    <button>☰</button>
+    <button id="voiceBtn">🎤</button>
+  </div>
 
-    <div class="logo">
-      ⚡ Vijay AI
+  <div class="hero">
+
+    <div class="orb"></div>
+
+    <h1>Hi, Vijay AI</h1>
+
+    <p>
+      Smart AI assistant with real-time responses,
+      voice, image and file support.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <span>🖼</span>
+      <h3>Generate Image</h3>
+      <p>Create AI images instantly</p>
     </div>
 
-    <button class="new-chat">
-      + New Chat
+    <div class="card">
+      <span>🎥</span>
+      <h3>Create Video</h3>
+      <p>AI video generation</p>
+    </div>
+
+    <div class="card">
+      <span>📝</span>
+      <h3>Summarise Text</h3>
+      <p>Convert long text short</p>
+    </div>
+
+    <div class="card">
+      <span>📄</span>
+      <h3>CV Builder</h3>
+      <p>Create professional CV</p>
+    </div>
+
+  </div>
+
+  <div class="chat-box" id="chatBox"></div>
+
+  <div class="bottom-bar">
+
+    <label class="icon-btn">
+      📎
+      <input type="file" hidden>
+    </label>
+
+    <input
+      type="text"
+      id="userInput"
+      placeholder="Type Message"
+    >
+
+    <button class="send-btn" onclick="sendMessage()">
+      ➤
     </button>
 
-    <div class="menu">
-
-      <div class="menu-item active">
-        💬 AI Chat
-      </div>
-
-      <div class="menu-item">
-        🎤 Voice Assistant
-      </div>
-
-      <div class="menu-item">
-        🖼 AI Images
-      </div>
-
-      <div class="menu-item">
-        📂 File Reader
-      </div>
-
-    </div>
-
-  </aside>
-
-  <main class="chat-container">
-
-    <div class="topbar">
-
-      <div>
-        <h1>Vijay AI</h1>
-        <p>Advanced Premium AI Assistant</p>
-      </div>
-
-      <div class="status">
-        ● Online
-      </div>
-
-    </div>
-
-    <div class="chat-box" id="chatBox">
-
-      <div class="message ai">
-        <div class="bubble">
-          Hello 👋 I am <b>Vijay AI</b>.<br>
-          Ask me anything.
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bottom-area">
-
-      <div class="tools">
-
-        <label class="tool-btn">
-          📎
-          <input type="file" hidden>
-        </label>
-
-        <label class="tool-btn">
-          🖼
-          <input type="file" accept="image/*" hidden>
-        </label>
-
-        <button class="tool-btn" id="voiceBtn">
-          🎤
-        </button>
-
-      </div>
-
-      <div class="input-box">
-
-        <input
-          type="text"
-          id="userInput"
-          placeholder="Message Vijay AI..."
-        >
-
-        <button onclick="sendMessage()">
-          ➤
-        </button>
-
-      </div>
-
-    </div>
-
-  </main>
+  </div>
 
 </div>
 
