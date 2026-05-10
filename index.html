@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vijzzz AI</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <aside class="sidebar">
+    <div class="logo">⚡ Vijzzz AI</div>
+    <button class="new-chat">+ New Chat</button>
+
+    <div class="menu">
+      <div class="menu-item active">💬 AI Chat</div>
+      <div class="menu-item">🖼 Image Support</div>
+      <div class="menu-item">🎤 Voice Mode</div>
+      <div class="menu-item">📂 File Upload</div>
+    </div>
+
+    <div class="bottom">
+      <div class="premium">Premium UI</div>
+    </div>
+  </aside>
+
+  <main class="chat-area">
+    <header>
+      <h1>Vijzzz AI</h1>
+      <p>Smart AI Assistant with Voice + Files + Images</p>
+    </header>
+
+    <div class="chat-box" id="chatBox">
+      <div class="message ai">
+        <span>Hello 👋 I'm <b>Vijzzz AI</b>. Ask anything!</span>
+      </div>
+    </div>
+
+    <div class="upload-row">
+      <label class="upload-btn">
+        📎 File
+        <input type="file" hidden />
+      </label>
+
+      <label class="upload-btn">
+        🖼 Image
+        <input type="file" accept="image/*" hidden />
+      </label>
+
+      <button class="voice-btn" id="voiceBtn">🎤 Voice</button>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask Vijzzz AI anything..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
